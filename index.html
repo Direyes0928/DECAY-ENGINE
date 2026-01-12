@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DECAY ENGINE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- DECAY ENGINE styles -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- // new 2026-01-11: DECAY ENGINE mobile-first wireframe -->
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-title">DECAY ENGINE</div>
+        <div class="brand-sub">corrupt your sound</div>
+      </div>
+
+      <button class="icon-btn" type="button" aria-label="Settings">
+        ⚙
+      </button>
+    </header>
+
+    <main class="main">
+      <!-- WAVEFORM PANEL (wireframe placeholder) -->
+      <section class="wave-panel" aria-label="Waveform">
+        <div class="wave-inner">
+          <div class="wave-title">WAVEFORM</div>
+          <div class="wave-placeholder"></div>
+          <div class="wave-controls">
+            <button class="btn btn-small" id="btnLoad" type="button">LOAD</button>
+            <button class="btn btn-small" id="btnPlay" type="button">PLAY</button>
+            <button class="btn btn-small" id="btnStop" type="button">STOP</button>
+            <input
+              id="fileInput"
+              type="file"
+              accept="audio/*"
+              style="position:fixed; top:-1000px; left:-1000px;"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- BIG DAMAGE KNOB -->
+      <section class="damage-zone" aria-label="Damage">
+        <div class="damage-label">DAMAGE</div>
+
+        <!-- Using the knob pack sheet as a placeholder image for now -->
+        <div class="knob knob-damage" data-param="damage">
+          <img class="knob-sheet" src="./assets/decay-mobile-knob-pack.png" alt="Damage knob">
+        </div>
+
+        <div class="damage-readout" aria-label="Damage readout">
+          CLEAN → DECAY → RUIN → CORRUPT → DEAD
+        </div>
+      </section>
+
+      <!-- VIRUS MODE -->
+      <section class="virus-zone" aria-label="Virus Mode">
+        <label class="field-label" for="virusMode">VIRUS MODE</label>
+        <select id="virusMode" class="select">
+          <option>TAPE ROT</option>
+          <option>DEMON RADIO</option>
+          <option>DEAD BATTERY</option>
+          <option>GHOST CALL</option>
+          <option>POLICE SCANNER</option>
+          <option>BASEMENT MIC</option>
+          <option>HELL SIGNAL</option>
+        </select>
+      </section>
+
+      <!-- CONTROL GRID -->
+      <section class="control-grid" aria-label="Controls">
+        <div class="control-card">
+          <div class="control-title">CRUSH</div>
+          <div class="knob knob-small" data-param="crush">
+            <img class="knob-sheet" src="./assets/decay-mobile-knob-pack.png" alt="Crush knob">
+          </div>
+        </div>
+
+        <div class="control-card">
+          <div class="control-title">FILTER</div>
+          <div class="knob knob-small" data-param="filter">
+            <img class="knob-sheet" src="./assets/decay-mobile-knob-pack.png" alt="Filter knob">
+          </div>
+        </div>
+
+        <div class="control-card">
+          <div class="control-title">SAT</div>
+          <div class="knob knob-small" data-param="sat">
+            <img class="knob-sheet" src="./assets/decay-mobile-knob-pack.png" alt="Saturation knob">
+          </div>
+        </div>
+
+        <div class="control-card">
+          <div class="control-title">GLITCH</div>
+          <div class="knob knob-small" data-param="glitch">
+            <img class="knob-sheet" src="./assets/decay-mobile-knob-pack.png" alt="Glitch knob">
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDERS (wireframe) -->
+      <section class="slider-zone" aria-label="Mix Sliders">
+        <div class="slider-row">
+          <label class="field-label" for="dirtMix">DIRT MIX</label>
+          <input id="dirtMix" class="slider" type="range" min="0" max="100" value="25" />
+        </div>
+
+        <div class="slider-row">
+          <label class="field-label" for="wetDry">WET / DRY</label>
+          <input id="wetDry" class="slider" type="range" min="0" max="100" value="70" />
+        </div>
+      </section>
+
+      <!-- ACTIONS -->
+      <section class="actions" aria-label="Actions">
+        <button class="btn btn-wide" type="button">SAVE PRESET</button>
+        <button class="btn btn-wide btn-ghost" type="button">EXPORT</button>
+      </section>
+    </main>
+
+    <footer class="bottombar">
+      <div class="status">Signal decaying…</div>
+      <button class="btn btn-small" type="button">UNDO</button>
+    </footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
