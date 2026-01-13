@@ -6,6 +6,9 @@
   <title>DECAY ENGINE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Fonts for futuristic text -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
   <!-- DECAY ENGINE styles -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -28,7 +31,10 @@
       <section class="wave-panel" aria-label="Waveform">
         <div class="wave-inner">
           <div class="wave-title">WAVEFORM</div>
-          <div class="wave-placeholder"></div>
+          <canvas id="waveform" class="wave-placeholder"></canvas>
+          <div class="meter-wrap">
+            <canvas id="levelMeter"></canvas>
+          </div>
           <div class="wave-controls">
             <button class="btn btn-small" id="btnLoad" type="button">LOAD</button>
             <button class="btn btn-small" id="btnPlay" type="button">PLAY</button>
@@ -55,20 +61,6 @@
         <div class="damage-readout" aria-label="Damage readout">
           CLEAN → DECAY → RUIN → CORRUPT → DEAD
         </div>
-      </section>
-
-      <!-- VIRUS MODE -->
-      <section class="virus-zone" aria-label="Virus Mode">
-        <label class="field-label" for="virusMode">VIRUS MODE</label>
-        <select id="virusMode" class="select">
-          <option>TAPE ROT</option>
-          <option>DEMON RADIO</option>
-          <option>DEAD BATTERY</option>
-          <option>GHOST CALL</option>
-          <option>POLICE SCANNER</option>
-          <option>BASEMENT MIC</option>
-          <option>HELL SIGNAL</option>
-        </select>
       </section>
 
       <!-- CONTROL GRID -->
@@ -102,6 +94,20 @@
         </div>
       </section>
 
+      <!-- VIRUS MODE -->
+      <section class="virus-zone" aria-label="Virus Mode">
+        <label class="field-label" for="virusMode">VIRUS MODE</label>
+        <select id="virusMode" class="select">
+          <option>TAPE ROT</option>
+          <option>DEMON RADIO</option>
+          <option>DEAD BATTERY</option>
+          <option>GHOST CALL</option>
+          <option>POLICE SCANNER</option>
+          <option>BASEMENT MIC</option>
+          <option>HELL SIGNAL</option>
+        </select>
+      </section>
+
       <!-- SLIDERS (wireframe) -->
       <section class="slider-zone" aria-label="Mix Sliders">
         <div class="slider-row">
@@ -117,8 +123,17 @@
 
       <!-- ACTIONS -->
       <section class="actions" aria-label="Actions">
-        <button class="btn btn-wide" type="button">SAVE PRESET</button>
-        <button class="btn btn-wide btn-ghost" type="button">EXPORT</button>
+        <section class="preset-zone">
+          <div class="preset-display">
+            <input id="presetName" placeholder="PRESET ID" />
+          </div>
+
+          <div class="preset-actions">
+            <button class="btn btn-wide" id="savePresetBtn">SAVE PRESET</button>
+            <button class="btn btn-wide btn-ghost" id="loadPresetBtn">LOAD PRESET</button>
+            <button class="btn btn-wide btn-ghost" id="resetBtn">RESET</button>
+          </div>
+        </section>
       </section>
     </main>
 
